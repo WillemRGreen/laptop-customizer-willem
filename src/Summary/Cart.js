@@ -1,10 +1,6 @@
 import React from 'react';
 import CartItem from './CartItem';
-
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-});
+import CartTotal from './CartTotal' 
 
 function Cart(props) {
   const cart = Object.keys(props.selected).map((feature, idx) => {
@@ -28,13 +24,13 @@ function Cart(props) {
 
   return (
     <>
-    {cart}
-    <div className='summary__total'>
-      <div className='summary__total__label'>Total</div>
-      <div className='summary__total__value'>
-        {USCurrencyFormat.format(total)}
-      </div>
-    </div>
+      <section className="main__summary">
+            <h2>Your cart</h2>
+            {cart}
+            <CartTotal
+              total={total}
+            />
+      </section>
     </>
   );
 }

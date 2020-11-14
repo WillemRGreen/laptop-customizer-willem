@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./Header/Header";
 import Customizer from "./Customizer/Customizer";
 import Cart from './Summary/Cart';
+import Features from './Features.js';
 
 class App extends Component {
   state = {
@@ -41,20 +42,12 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
             <Customizer
-              features={this.props.features}
+              features={Features}
               selected={this.state.selected}
               updateFeature={this.updateFeature}
             />
-          </form>
-          <section className="main__summary">
-            <h2>Your cart</h2>
              <Cart selected={this.state.selected} />
-            
-            
-          </section>
         </main>
       </div>
     );

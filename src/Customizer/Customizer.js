@@ -1,5 +1,5 @@
 import React from 'react';
-import Category from './PartType';
+import PartType from './PartType';
 
 
 function Customizer(props) {
@@ -7,7 +7,7 @@ function Customizer(props) {
         const featureHash = feature + "-" + idx;
         return (
             
-            <Category 
+            <PartType 
                 key={featureHash}
                 featureHash={featureHash}
                 name={feature}
@@ -17,7 +17,14 @@ function Customizer(props) {
                 />
         )
     });
-    return <div>{features}</div>;
+    return (
+        <form className="main__form">
+            <h2>Customize your laptop</h2>
+            <div>
+                {features}
+            </div>
+        </form>
+    )
 }
 
 export default Customizer;

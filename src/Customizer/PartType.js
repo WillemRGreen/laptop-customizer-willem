@@ -1,13 +1,13 @@
 import React from 'react';
 import slugify from 'slugify';
-import Items from './ItemOption';
+import ItemOption from './ItemOption';
 
 
-function Category(props) {
+function PartType(props) {
     const feature = props.options.map(item=> {
         const itemList=slugify(JSON.stringify(item))
         return (
-            <Items
+            <ItemOption
               key={itemList}
               id={itemList}
               feature={props.name}
@@ -31,4 +31,4 @@ function Category(props) {
     )
 }
 
-export default Category;
+export default PartType;
